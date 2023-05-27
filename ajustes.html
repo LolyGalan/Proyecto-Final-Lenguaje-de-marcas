@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Document</title>
+</head>
+<body style="background-image:url(fondocv.webp);">
+    <h1 style="margin-top: 100px ;">Proyecto final Lenguaje de marcas!!</h1>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./tresEnR.html">Tres en raya</a></li>
+            <li><a href="#">Señalar</a></l>
+	    </ul>
+    </nav>
+    
+    <div style="text-align:center;">
+        <h2 style=" display: inline">Dolores Galan Corral </h2>
+        <h2 style=" display: inline"> - 1º DAW -</h2>
+       
+    </div>
+    <div class="contenedor">
+        <p> Seleccione el color y después la posición que desea señalar de ese color</p>
+        <input type="color" id="color">
+        <label class="label" for="color">Seleccione color: </label>
+        <div class="derecha" onclick="cambiarColor('derecha')">Derecha</div>
+        <div class="centro" onclick="cambiarColor('centro')">Centro</div>
+        <div class="izquierda" onclick="cambiarColor('izquierda')">Izquierda</div>
+      </div>
+      <footer>Dolores Galán Corral-1ºDAW</footer>
+      <script>
+        var elementoSeleccionado = document.getElementsByClassName("derecha")[0]; //default
+        var color = document.getElementById("color");
+        
+        color.onchange = function() {
+          elementoSeleccionado.style.backgroundColor = color.value;
+        };
+        
+        function cambiarColor(identificador) {
+          elementoSeleccionado = document.getElementsByClassName(identificador)[0];
+        }
+      </script>
+</body>
+</html>

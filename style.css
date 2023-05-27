@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor-juego{
+    height:100vh;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    text-align: center;
+
+}
+
+.juego-titulo, .juego-info{
+    text-align: center;
+}
+
+.juego-cuadricula{
+   
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:0;
+    border: 1px solid yellow;
+}
+
+.cuadro{
+    width:6rem;
+    height: 6rem;
+    border: 1px solid green;
+    text-align: center;
+    color:rgb(7, 255, 69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: background-color ease-in 0.2s;
+    font-size:40px;
+}
+
+.cuadro:hover{
+   
+    background-color:#cccc;
+    
+}
+
+.juego-boton{
+    display:inline-flex;
+    padding: 1rem 1rem;
+    background:green ;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: bold;
+    transition:color ease-out 0.3s;
+    border-radius: 4px;
+    width: 20%;
+   
+}
+
+.juego-boton:hover{
+  
+    background:lightgreen;
+    color: red;
+    border: 1px solid red;
+   
+}
+nav{
+    margin-top: 40px;
+}
+nav ul{
+    list-style-type: none;
+    text-align: center;
+ }
+ nav li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+ }
+ #nav li a {
+    padding: 2px 7px 2px 7px;
+    color: #666;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    text-decoration: none;
+ }
+ nav li a:hover{
+    background-color: #333333;
+    color: #ffffff;
+ }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <script src="https://kit.fontawesome.com/19e204a227.js" crossorigin="anonymous"></script>
+    <title>Primera Tarea index</title>
+</head>
+
+<body >
+    <div class="nocheDia">
+        <button class="switch" id="switch">
+            <span><i class="fa-regular fa-sun"></i></span>
+            <span><i class="fa-solid fa-moon"></i></span>
+        </button>
+        
+     </div>
+     <h1 style="margin-top: 100px ;">Proyecto final Lenguaje de marcas!!</h1>
+    <nav class="navegador">
+        <ul>
+		<li><a href="./index.html">Inicio</a></li>
+		<li><a href="./tresEnR.html">Tres en raya</a></li>
+		<li><a href="./ajustes.html">Señalar</a></l>
+	 </ul>
+    </nav>
+
+    <div style="text-align:center;">
+        <h2 style=" display: inline">Dolores Galan Corral </h2>
+        <h2 style=" display: inline"> - 1º DAW -</h2>
+    </div>
+    <div id="main">
+        <h2>Información del proyecto</h2>
+        <input type="radio" id="mostrar-modal" name="modal">
+        <label for="mostrar-modal">Mostrar modal</label>
+        <input type="radio" id="cerrar-modal" name="modal">
+        <label for="cerrar-modal">X</label>
+        <div id="modal">
+                <p class="parrafo_modal">
+                    Proyecto final Lenguaje de marcas. Compuesto de 3 páginas: una de inicio con título, la modal de información, botón modo día/noche que guarda el cambio de estilos en localStorage, un input para mostrar un footer determinado y menú de navegación, una segunda página con el juego de tres en raya diseñado en javascript y una última página de tema libre donde se puede subrayar un texto eligiendo un color.
+                </p>
+        </div>
+    </div>
+    <label for="nombre">Introduce el nombre que quieres que aparezca en el footer</label>
+    <br>
+    <input type="text" id="nombre" >
+    
+    <footer id="footer"></footer>
+    <script>
+        const btnSwitch = document.querySelector('#switch');
+
+        btnSwitch.addEventListener("click", () => {
+            document.body.classList.toggle('dark');
+            btnSwitch.classList.toggle('active');
+            if(document.body.classList.contains('dark')){
+                localStorage.setItem('dark-mode', 'true');
+            }else{
+                localStorage.setItem('dark-mode', 'false');
+            }
+        });
+        if(localStorage.getItem('dark-mode') === 'true'){
+            document.body.classList.add('dark');
+            btnSwitch.classList.add('active');
+        }else{
+            document.body.classList.remove('dark');
+            btnSwitch.classList.remove('active');
+        }
+
+        const input = document.getElementById('nombre');
+        const footer = document.getElementById('footer');
+
+        input.addEventListener('input', function() {
+        footer.textContent = `Bienvenid@ ${input.value}`;
+        });
+        const inputFooter = document.getElementById('nombre');
+        const valorInput = inputFooter.value;
+        localStorage.setItem('resultadoInput', valorInput);
+        const valorGuardado = localStorage.getItem('resultadoInput');
+        inputFooter.value = valorGuardado;
+
+    </script>
+</body>
+
+</html>
